@@ -1,5 +1,7 @@
 package me.tiezhu.leetcode.quiz;
 
+import java.util.Arrays;
+
 /**
  *
  * Given an unsorted array of integers, find the length of longest increasing subsequence.
@@ -19,22 +21,23 @@ public class LISAs300 {
         }
 
         // 从一个看懂了的动态规划描述写出来的
-        int[] seq = new int[nums.length + 1];
-        seq[0] = 0;
-        seq[1] = nums[0];
+        int[] seq = new int[nums.length + 1]; // 下标表示LIS的长度，值表示形成该LIS的last value的最小值
+        seq[0] = 0; // max length of seq
 
         for (int i = 0;i < nums.length;i++) {
             int j = 1;
             while(j <= seq[0]) {
-                if (nums[i] < seq[j]) {
+                if (nums[i] < seq[j]) { // 发现更小的值
                     seq[j] = nums[i];
                     break;
                 }
                 j++;
             }
-            if (j > seq[0]) {
+            System.out.printf("i=%d, j=%d, after while %s%n", i, j, Arrays.toString(seq));
+            if (j > seq[0]) { // 找到更长的序列
                 seq[0] = j;
                 seq[j] = nums[i];
+                System.out.printf("i=%d, j=%d, n>s %s%n", i, j, Arrays.toString(seq));
             }
         }
 
@@ -57,9 +60,9 @@ public class LISAs300 {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {1,99,100,2,3,4,5,6};
-        int[] nums2 = {10,9,2,5,3,4};
-        int[] nums3 = {1,2,5,3,4};
+        int[] nums1 = {1,99,100,2,3,4,5,10};
+        int[] nums2 = {10,9,2,5,3,11};
+        int[] nums3 = {5,6,7,1};
         System.out.println(new LISAs300().lengthOfLIS(nums1));
         System.out.println(new LISAs300().lengthOfLIS(nums2));
         System.out.println(new LISAs300().lengthOfLIS(nums3));

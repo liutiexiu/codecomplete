@@ -16,6 +16,11 @@ import java.util.List;
  */
 public class FindDupInArrayAs442 {
     public List<Integer> findDuplicates(int[] nums) {
+        return findDuplicates1(nums);
+    }
+
+    // 这个方法不对啊，值域是有限制的
+    public List<Integer> findDuplicates1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new ArrayList<>();
         }

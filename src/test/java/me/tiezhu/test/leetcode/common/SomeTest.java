@@ -1,6 +1,6 @@
 package me.tiezhu.test.leetcode.common;
 
-import me.tiezhu.leetcode.utils.SomeMath;
+import me.tiezhu.quiz.utils.SomeMath;
 import org.junit.Test;
 
 public class SomeTest {

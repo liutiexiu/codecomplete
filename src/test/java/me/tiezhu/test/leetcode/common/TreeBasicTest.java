@@ -1,8 +1,8 @@
 package me.tiezhu.test.leetcode.common;
 
-import me.tiezhu.leetcode.common.TreeNode;
-import me.tiezhu.leetcode.common.algorithm.TreeAlgorithm;
-import me.tiezhu.leetcode.utils.Logging;
+import me.tiezhu.quiz.common.TreeNode;
+import me.tiezhu.quiz.common.algorithm.TreeAlgorithm;
+import me.tiezhu.quiz.utils.Logging;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
